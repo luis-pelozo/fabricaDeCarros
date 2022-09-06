@@ -1,24 +1,55 @@
 
 package modelo;
+
 import java.util.ArrayList;
-    
-
 public class Fabrica {
-    private ArrayList<Carro> listaDeCarros  = new ArrayList<Carro>();   
+    private String modelo;
+    private String cor;
 
+    private ArrayList<Veiculo> listaDeCarros  = new ArrayList<Veiculo>();   
     
-    public ArrayList<Carro> listaDeCarros(){
+    public String getModelo(){
+        return modelo;
+    }
+
+    public void setModelo(String modelo){
+        this.modelo = modelo;
+    }
+
+    public String getCor(){
+        return cor;
+    }
+
+    public void setCor(String cor){
+        this.cor = cor;
+    }
+
+    public ArrayList<Veiculo> getListaDeCarros(){
         return listaDeCarros;
     }
-    public void listaDeCarros(ArrayList<Carro> listaDeCarros){
+
+    public void  setListaDeCarros(ArrayList<Veiculo> listaDeCarros){
         this.listaDeCarros = listaDeCarros;
     }
 
-    public String venderCarro(){
+
+    //construir um carro
+    public void montarCarro(String modelo, String cor, ArrayList<Veiculo> listaDeCarros){
+
+        setModelo(modelo);
+        setCor(cor);
+        setListaDeCarros(listaDeCarros);
+    }
+
+    public String mostraInfoCarros(){
+       // String informações = "Modelo: "+ this.modelo + "\n Cor: "+ this.cor + ""
+       String informacoes  = "";
+
+       for (Veiculo veiculo:this.listaDeCarros){
+        String modeloCarro = veiculo.getModelo();
+       }
+
         return "1";
     }
 
-    public String fabricarCarro(){
-        return "1";
-    }
 }

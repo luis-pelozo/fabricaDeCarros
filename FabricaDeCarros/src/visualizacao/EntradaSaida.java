@@ -15,5 +15,14 @@ public class EntradaSaida {
 		
 		return menu.getSelectedIndex();
 	}
+
+	public static String solicitaModelo(String modelo, int ordem) {		
+		return JOptionPane.showInputDialog("Informe o modelo do "+modelo);
+	
+	}
+
+	public static String solicitaCor() {
+		return JOptionPane.showInputDialog("Informe a cor da casa");
+	}
     
 }
