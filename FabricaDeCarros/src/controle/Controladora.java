@@ -1,15 +1,16 @@
 package controle;
 
-
-import modelo.*;
-import visualizacao.EntradaSaida;
-import javax.swing.JOptionPane;
 import java.util.ArrayList;
+import javax.lang.model.util.ElementScanner14;
+import javax.swing.JOptionPane;
+import visualizacao.EntradaSaida;
+import modelo.*;
+
 //import javax.lang.model.util.ElementScanner14;
 
 public class Controladora {
     
-    private Carro carro = null;
+    private Carros carro = null;
 
     public void exibeMenu(){
         int opcao;
@@ -25,30 +26,43 @@ public class Controladora {
                 switch(opcao){
 
                     case 0:
-                    this.carro = new Carro();
+                    //this.carro = new Carros();
+                    
+                    int qtdCarros = EntradaSaida.solicitaQtdCarros("carro");
 
-                    String modelo = EntradaSaida.solicitaModelo("Carro", 0);
-                    String cor    = EntradaSaida.solicitaCor();
-                   /*  int qtdCarros = EntradaSaida.solicitaQtdCarros("Carros");
-                    while(qtdCarros<=0){
+                    while(qtdCarros<=0){//valida se a quantidade de carros é igual ou menor que 0
                         JOptionPane.showMessageDialog(null, "Informe uma quantidade válida");
                         qtdCarros = EntradaSaida.solicitaQtdCarros("Carros");
-                    }*/
+                    }
+                    for (int i=0; i<qtdCarros; i++){
+                       // String modelo = EntradaSaida.solicitaModelo("carro",0);
+                     //   String cor    = EntradaSaida.solicitaCor();
+                        //Carros carro = new Carros();
+                        JOptionPane.showMessageDialog(null, "CHEGOU");
+                    }
+                   
 
-                    ArrayList<Carro> listaDeCarros = new ArrayList<Carro>();
+
+
+
+
+
+
+                
+                    ArrayList<Carros> listaDeCarros = new ArrayList<Carros>();
                     /*for (int i=0; i<1; i++){
                         Carro carro = new Carro();
                         carro.setModelo(EntradaSaida.solicitaModelo("Carro", (i+1)));
                         carro.setCor(EntradaSaida.solicitaCor());
                         
-                    }*/
-                   // this.carro.montarCarro(modelo, cor, listaDeCarros);
+                    }
+                    this.carro.montarCarro(modelo, cor, listaDeCarros);
                    listaDeCarros.add(carro);
-                    /*************************************************************** */
+                    
                     System.out.println("MODELO DO CARRO: "+ carro.getModelo() + "\n");
                     System.out.println("COR DO CARRO:" + carro.getCor()+ "\n");;
-                    /*************************************************************** */
-                    for(Carro carro: carro.getListaDeCarros()) {
+               
+                    for(Carros carro: carro.getListaDeCarros()) {
                         System.out.println("Descrição da porta: "+ carro.getModelo()+"\n");
                         System.out.println("Estado da Porta: "   + carro.getCor()+"\n");
                     }    
@@ -63,6 +77,7 @@ public class Controladora {
                     //JOptionPane.showMessageDialog(null, "VER INFO DO CARRO");
                     String informacoes = this.carro.mostraInfoCarros();
 						EntradaSaida.exibeInformacaoCarro(informacoes);
+                        */
                 }
             }
         }while (opcao !=3);
