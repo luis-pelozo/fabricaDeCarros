@@ -5,8 +5,7 @@ import java.util.ArrayList;
 public class Fabrica {
     private String modelo;
     private String cor;
-
-    private ArrayList<Veiculo> listaDeCarros  = new ArrayList<Veiculo>();   
+    private ArrayList<Carro> listaDeCarros  = new ArrayList<Carro>();   
     
     public String getModelo(){
         return modelo;
@@ -24,32 +23,25 @@ public class Fabrica {
         this.cor = cor;
     }
 
-    public ArrayList<Veiculo> getListaDeCarros(){
+    public ArrayList<Carro> getListaDeCarros(){
         return listaDeCarros;
     }
 
-    public void  setListaDeCarros(ArrayList<Veiculo> listaDeCarros){
+    public void  setListaDeCarros(ArrayList<Carro> listaDeCarros){
         this.listaDeCarros = listaDeCarros;
     }
 
-
     //construir um carro
-    public void montarCarro(String modelo, String cor, ArrayList<Veiculo> listaDeCarros){
+    public void montarCarro(String modelo, String cor, ArrayList<Carro> listaDeCarros){
 
         setModelo(modelo);
         setCor(cor);
         setListaDeCarros(listaDeCarros);
     }
 
-    public String mostraInfoCarros(){
-       // String informações = "Modelo: "+ this.modelo + "\n Cor: "+ this.cor + ""
-       String informacoes  = "";
+    /*public void venderCarro(String modelo){
 
-       for (Veiculo veiculo:this.listaDeCarros){
-        String modeloCarro = veiculo.getModelo();
-       }
+    }*/
 
-        return "1";
-    }
-
+    
 }

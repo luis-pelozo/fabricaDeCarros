@@ -16,13 +16,28 @@ public class EntradaSaida {
 		return menu.getSelectedIndex();
 	}
 
+	public static void exibeEncerraPrograma(){
+		JOptionPane.showMessageDialog(null, "Programa finalizado");
+	}
+
 	public static String solicitaModelo(String modelo, int ordem) {		
-		return JOptionPane.showInputDialog("Informe o modelo do "+modelo);
-	
+		/*if (ordem == 0){
+			return JOptionPane.showInputDialog("Informe o modelo do "+modelo);
+		}else{
+			return JOptionPane.showInputDialog("Informe o modelo do "+ordem + " "+modelo);
+		}*/	
+		return JOptionPane.showInputDialog("Informe o modelo do carro");
 	}
 
 	public static String solicitaCor() {
-		return JOptionPane.showInputDialog("Informe a cor da casa");
+		return JOptionPane.showInputDialog("Informe a cor do Carro");
+	}
+
+	public static int solicitaQtdCarros(String carro){
+		return Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de "+carro));
 	}
     
+	public static void exibeInformacaoCarro(String informacoes){
+		JOptionPane.showMessageDialog(null, informacoes, "Informações do carro", JOptionPane.INFORMATION_MESSAGE);
+	}
 }
