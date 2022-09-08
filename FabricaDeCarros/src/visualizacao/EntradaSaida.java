@@ -1,47 +1,43 @@
 package visualizacao;
 
-import java.util.ArrayList;
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
-import controle.Controladora;
 
+import controle.Controladora;
+import modelo.Carros;
 public class EntradaSaida {
 
-    public static int solicitaOpcao() {
-		
-		String[] opcoes = {"Fabricar Carro" , "Vender um carro", "Ver informações do carro", "Sair do programa"};
-		
+	public static int solicitaOpcao(){
+		String[] opcoes = {"Montar carros", "Vender carro", "Ver carros", "Sair da fabrica"};
 		JComboBox<String> menu = new JComboBox<String>(opcoes);
-		
-		JOptionPane.showConfirmDialog(null, menu, "Selecione a opção desejada", JOptionPane.OK_CANCEL_OPTION);
-		
+
+		JOptionPane.showConfirmDialog(null, menu, "Selecione uma opção", JOptionPane.OK_CANCEL_OPTION);
 		return menu.getSelectedIndex();
 	}
 
-	public static void exibeEncerraPrograma(){
-		JOptionPane.showMessageDialog(null, "Programa finalizado");
+	public static void msgEncerraLoja(){
+		JOptionPane.showMessageDialog(null, "A loja será finalziada");
+		
 	}
 
 	public static int solicitaQtdCarros(String carro){
-		
-		return Integer.parseInt( JOptionPane.showInputDialog("Informe a quantidade de "/*+carro*/));
+		return Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de carros para montar"));
 	}
 
-	public static String solicitaModelo(String modelo, int ordem) {		
-		if (ordem == 0){
-			return JOptionPane.showInputDialog("Informe o modelo do "+modelo);
-		}else{
-			return JOptionPane.showInputDialog("Informe o modelo do "+ordem + " "+modelo);
-		}		
+	public static String  solicitaModelo(String carro){
+		String modeloCarro = JOptionPane.showInputDialog(null, "Informe o modelo do carro"); 
+		return modeloCarro;
 	}
 
-	public static String solicitaCor() {
-		return JOptionPane.showInputDialog("Informe a cor do Carro");
+	public static String solicitaCor(String carro){
+		String corCarro = JOptionPane.showInputDialog(null, "Informe a cor do carro");
+		return corCarro;
 	}
 
-	
-    
-	public static void exibeInformacaoCarro(String informacoes){
-		JOptionPane.showMessageDialog(null, informacoes, "Informações do carro", JOptionPane.INFORMATION_MESSAGE);
+	public static void mostrInfoCarros(String informacoes){
+		JOptionPane.showMessageDialog(null, informacoes, "Informações dos carros", JOptionPane.INFORMATION_MESSAGE);
 	}
+
+
+
 }
