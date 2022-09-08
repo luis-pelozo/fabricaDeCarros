@@ -24,20 +24,21 @@ public class EntradaSaida {
 		return Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de carros para montar"));
 	}
 
-	public static String  solicitaModelo(String carro){
-		String modeloCarro = JOptionPane.showInputDialog(null, "Informe o modelo do carro"); 
+	public static String  solicitaModelo(String carro, int ordem){
+		if (ordem==1) {
+			return	 JOptionPane.showInputDialog("Informe a descrição do carro");
+	
+		}else {
+		String modeloCarro = JOptionPane.showInputDialog(null, "Informe o modelo do "+ordem+ " carro"); 
 		return modeloCarro;
+		}
 	}
 
-	public static String solicitaCor(String carro){
-		String corCarro = JOptionPane.showInputDialog(null, "Informe a cor do carro");
-		return corCarro;
+	public static String solicitaCor(String carro, int ordem){		
+		return	 JOptionPane.showInputDialog("Informe a cor do carro ");		
 	}
 
 	public static void mostrInfoCarros(String informacoes){
 		JOptionPane.showMessageDialog(null, informacoes, "Informações dos carros", JOptionPane.INFORMATION_MESSAGE);
 	}
-
-
-
 }

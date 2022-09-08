@@ -19,4 +19,12 @@ public class Fabrica {
         setListaDeCarros(listaDeCarros);
     }
 
+    public String mostraCarros(){
+        String informacoes = "Lista de Carros: \n";
+        for (Carros carro:this.listaDeCarros){
+            informacoes+= " "+carro.getModelo() + " " + carro.getCor()+"\n";
+        }
+        return informacoes;
+    }
+
 }
