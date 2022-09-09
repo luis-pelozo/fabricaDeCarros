@@ -22,7 +22,7 @@ public class Fabrica {
     public String mostraCarros(){
         String informacoes = "Lista de Carros: \n";
         for (Carros carro:this.listaDeCarros){
-            informacoes+= " "+carro.getModelo() + " " + carro.getCor()+"\n";
+            informacoes+= " "+carro.getModelo() ;//+ " " + carro.getCor()+"\n";
         }
         return informacoes;
     }

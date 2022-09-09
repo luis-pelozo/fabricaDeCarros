@@ -4,6 +4,7 @@ public  class Carros {
 
     protected String modelo;
     protected String cor;
+    protected int quantidadeCarros;
 
     public String getModelo(){
         return modelo;
@@ -13,12 +14,20 @@ public  class Carros {
         this.modelo = modelo;
     }
 
-    public String getCor(){
+   /* public String getCor(){
         return cor;
+    }*/ 
+
+    /* public void setCor(String cor){
+        this.cor = cor;
+    }*/ 
+
+    public int getQuantidadeCarros(){
+        return quantidadeCarros;
     }
 
-    public void setCor(String cor){
-        this.cor = cor;
+    public void setQuantidadeCarros(int quantidadeCarros){
+        this.quantidadeCarros = quantidadeCarros;
     }
 
 }
