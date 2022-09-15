@@ -30,27 +30,28 @@ public class EntradaSaida {
 		return QtdCarros;
 	}
 
-	public static String  solicitaModelo(String carro, int ordem){
+	public static String  solicitaModelo(int ordem){
 		if (ordem==1) {
-			return	 JOptionPane.showInputDialog("Informe o modelo e cor do carro");
+			return	 JOptionPane.showInputDialog("Informe o modelo do carro");
 	
 		}else {
 		String modeloCarro = JOptionPane.showInputDialog(null, "Informe o modelo e cor do "+ordem+ " carro"); 
 		return modeloCarro;
 		}
 	}
-	/*public static String solicitaCor(String carro, int ordem){		
+	public static String solicitaCor(){		
 		return	 JOptionPane.showInputDialog("Informe a cor do carro ");		
-	} */	
+	} 	
 
 	public static void mostrInfoCarros(String informacoes){
 		JOptionPane.showMessageDialog(null, informacoes, "Informações dos carros", JOptionPane.INFORMATION_MESSAGE);
 	}
 
-	public static String  removeCarro(String carro){
+	public static String  solicitaModeloRemover(){
 		return JOptionPane.showInputDialog(null, "Informe o carro a ser vendido");
 		
 	}	
+
 
 	/*public static int opcaoRemover(){
 

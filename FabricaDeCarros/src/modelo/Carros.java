@@ -14,13 +14,13 @@ public  class Carros {
         this.modelo = modelo;
     }
 
-   /* public String getCor(){
+    public String getCor(){
         return cor;
-    }*/ 
+    }
 
-    /* public void setCor(String cor){
+     public void setCor(String cor){
         this.cor = cor;
-    }*/ 
+    } 
 
     public int getQuantidadeCarros(){
         return quantidadeCarros;
