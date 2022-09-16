@@ -1,13 +1,7 @@
 package visualizacao;
 
-//import java.util.ArrayList;
-
 import javax.swing.JComboBox;
 import javax.swing.JOptionPane;
-
-//import controle.Controladora;
-//import modelo.Carros;
-//import modelo.Fabrica;
 public class EntradaSaida {
 
 	public static int solicitaOpcao(){
@@ -19,12 +13,10 @@ public class EntradaSaida {
 	}
 
 	public static void msgEncerraLoja(){
-		JOptionPane.showMessageDialog(null, "A loja será finalziada");
-		
+		JOptionPane.showMessageDialog(null, "A loja será finalziada");		
 	}
 
-	public static int solicitaQtdCarros(String carro){
-		
+	public static int solicitaQtdCarros(String carro){		
 		//return Integer.parseInt(JOptionPane.showInputDialog("Informe a quantidade de carros para montar"));
 		int QtdCarros = Integer.parseInt(JOptionPane.showInputDialog(null, "Informe a quantidade de carros")); 
 		return QtdCarros;
@@ -48,17 +40,6 @@ public class EntradaSaida {
 	}
 
 	public static String  solicitaModeloRemover(){
-		return JOptionPane.showInputDialog(null, "Informe o carro a ser vendido");
-		
+		return JOptionPane.showInputDialog(null, "Informe o carro a ser vendido");		
 	}	
-
-
-	/*public static int opcaoRemover(){
-
-		String[] opcoes = {}
-		JComboBox<String> menu = new JComboBox<String>(opcoes);
-
-		JOptionPane.showConfirmDialog(null, menu, "Selecione uma opção", JOptionPane.OK_CANCEL_OPTION);
-		return menu.getSelectedIndex();
-	}*/
 }

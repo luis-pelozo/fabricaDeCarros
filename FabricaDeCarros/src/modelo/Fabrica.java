@@ -1,12 +1,12 @@
 package modelo;
 
+//import java.io.Console;
 import java.util.ArrayList;
-
 import javax.swing.JOptionPane;
 
-import visualizacao.*;
+/*import visualizacao.*;
 import controle.*;
-import modelo.*;
+import modelo.*;*/
 public class Fabrica {
 
     //private String modelo;
@@ -27,33 +27,31 @@ public class Fabrica {
 
     public String mostraCarros(){
         String informacoes = "Lista de Carros: \n";
-        for (Carros carro:this.listaDeCarros){
-            informacoes+= " "+carro.getModelo() + " " + carro.getCor()+"\n";
+        for (Carros carro : this.getListaDeCarros()){
+        //for(int i = 0; i < listaDeCarros.size(); i ++){
+            informacoes+= " "+ carro.getModelo() + " " + carro.getCor()+"\n";
         }
         return informacoes;
     }
 
-    public static boolean removerCarro(String corVenda, String modeloVenda, Fabrica fabrica ){
+    public void removerCarro(String modeloVenda, String corVenda){
         boolean jupiter = false;
-        
-        for(Carros carro: fabrica.getListaDeCarros()){
-            if(modeloVenda.equalsIgnoreCase(carro.getModelo()) && corVenda.equalsIgnoreCase(carro.getCor())){
+        Carros carro = null;
+
+        ArrayList<Carros> listaDeCarros = getListaDeCarros();
+
+        for(int i = 0; i < listaDeCarros.size(); i ++){
+          
+            carro = listaDeCarros.get(i);
+
+            if((modeloVenda.equalsIgnoreCase(carro.getModelo())) && (corVenda.equalsIgnoreCase(carro.getCor()))){
                 listaDeCarros.remove(carro);  
                 jupiter = true;
-                
-            }else{
-                jupiter = false;
+                JOptionPane.showMessageDialog(null, "Carro vendido com sucesso");                               
             }
         }   
-        if(jupiter = true){
-            JOptionPane.showMessageDialog(null, "Carro vendido com sucesso");
-        }else{
-            JOptionPane.showMessageDialog(null, "foi não");
+        if(jupiter == false){
+            JOptionPane.showMessageDialog(null, "Não foi possivel fazer a venda");            
         }
-        System.out.println(jupiter);
-        
-        return jupiter;
-    
     }
-
 }

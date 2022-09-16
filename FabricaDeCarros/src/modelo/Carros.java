@@ -29,6 +29,5 @@ public  class Carros {
     public void setQuantidadeCarros(int quantidadeCarros){
         this.quantidadeCarros = quantidadeCarros;
     }
-
 }
 
