@@ -29,6 +29,7 @@ public class Fabrica {
         String informacoes = "Lista de Carros: \n";
         for (Carros carro : this.getListaDeCarros()){
         //for(int i = 0; i < listaDeCarros.size(); i ++){
+            System.out.println("Olá");
             informacoes+= " "+ carro.getModelo() + " " + carro.getCor()+"\n";
         }
         return informacoes;

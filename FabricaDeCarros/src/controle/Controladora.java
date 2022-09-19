@@ -12,6 +12,8 @@ import modelo.*;
 public class Controladora {
    
     private Fabrica fabrica = new Fabrica();
+    private Carros carro = new Carros();
+    private ArrayList<Carros> listaDeCarros = new ArrayList<Carros>();
 
     public void exibeMenu(){
         int opcao;
@@ -27,11 +29,12 @@ public class Controladora {
                     case 0:
                        // this.fabrica = new Fabrica();
                         int qtdVeiculos = EntradaSaida.solicitaQtdCarros("carro");
-                        while(qtdVeiculos<=0){
+                        
+                        while(qtdVeiculos<1){
                             JOptionPane.showMessageDialog(null,"Informe uma quantidade maior que 0");
                             qtdVeiculos = EntradaSaida.solicitaQtdCarros("carro");
                         }
-                        ArrayList<Carros> listaDeCarros = new ArrayList<Carros>();
+                        
                         for (int i=0; i<qtdVeiculos; i++) {
                             Carros carro = new Carros();
                             carro.setModelo(EntradaSaida.solicitaModelo((i+1)));
@@ -41,8 +44,8 @@ public class Controladora {
                         this.fabrica.montaCarros(listaDeCarros);
                         for(Carros carro: fabrica.getListaDeCarros()){
                             System.out.println("Modelo "+carro.getModelo()+"\n");
-                            System.out.println("Cor " + carro.getCor()+"\n");
-                        }
+                            System.out.println("Cor " + carro.getCor()+"\n"); 
+                        }  
                     break;
 
                     case 1:                    
